@@ -26,6 +26,15 @@
         <cucumber-jvm.version>1.0.3</cucumber-jvm.version>
     </properties>
 
+    <repositories>
+        <!--other repositories if any-->
+        <repository>
+            <id>project.local</id>
+            <name>project</name>
+            <url>file:${project.basedir}/repo</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>uk.gov.dwp.logging</groupId>
@@ -195,23 +204,6 @@
                         <id>copy-dependencies</id>
                         <phase>package</phase>
                         <goals><goal>copy-dependencies</goal></goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.owasp</groupId>
-                <artifactId>dependency-check-maven</artifactId>
-                <version>${owasp.version}</version>
-                <configuration>
-                    <cveValidForHours>12</cveValidForHours>
-                    <failBuildOnCVSS>4</failBuildOnCVSS>
-                    <suppressionFile>src/test/resources/DependencySuppression.xml</suppressionFile>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
                     </execution>
                 </executions>
             </plugin>
