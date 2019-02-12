@@ -1,7 +1,10 @@
 **/.DS_Store
 .idea/
 *.iml
-target/
+target/*
+!target/dependency/
+target/dependency/*
+!target/dependency/encoded-logger-output-*
 .classpath
 .project
 .settings/
